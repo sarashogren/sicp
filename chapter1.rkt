@@ -451,3 +451,55 @@ size
         ((= kinds-of-coins 5) 50)))
 
 (count-change 11)
+
+
+;; redoing section 1.2.3
+
+(define (factorial n)
+  (if (= n 1)
+      1
+      (* n (factorial (- n 1)))))
+
+(factorial 6)
+
+(define (factorial n)
+  (fact-iter 1 1 n))
+
+(define (factorial n)
+  (if (> counter max-count)
+      product
+      (fact-iter (* counter product)
+                 (+ counter 1)
+                 max-count)))
+
+;;--------------------------------------------------
+;; *** Exercise 1.9 ***
+
+
+(define (+ a b)
+  (if (= a 0)
+      b
+      (inc (+ (dec a) b))))
+
+;; 4 does not equal 0 so it will not return anything. Instead it will go straight to the next step. decrease 4 by 1 to give 3, and return 5. process that 
+
+;; This procedure is recursive - it requires that the computer hold more information the further more numbers that are evaluated. Once it reaches so the a = 0, then it will start to do the remaining math to figure out what b will be to return it.
+
+(define (+ a b)
+  (if (= a 0)
+      b
+      (+ (dec a) (inc b))))
+
+;; 4 doesn't equal 0 so it will not return 5. Then it decreases 4 by 1 to give 3, and increases 5 by 1 to give 6. New a b is 3 6. 3 is not equal to 0 so it does not return our new b which is 6. It decreases our 3 by 1 to 2, and increases 6 by 1 to 7. Our new a b is 2 7. Is 2 equal to 0, no, so it decreases our new a down to 1 and increases our new b up to 8. 1 8 is our new a b. 1 does not equal 0 so it decreases 1 by 1 to give 0, then increases 8 to 9. New a b is 0 9. 0 equals 0 so it returns 9 and we are left at that.
+;; This procedure is iterative - this evaluates a and b every time. we can stop the process mid-process and still be able to pick it back up later. It stores the most current numbers. 
+
+
+;;-----------------------------
+;; *** Exercise 1.10 ***
+
+(define (A x y)
+  (cond ((= y 0) 0
+   )))
+
+
+
