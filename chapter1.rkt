@@ -501,7 +501,7 @@ size
   (cond ((= y 0) 0)
         ((= x 0) (* 2 y))
         ((= y 1) 2)
-        (else (A (= x 1)
+        (else (A (- x 1)
                  (A x (- y 1))))))
 
 ;;x is 1 y is 10...
@@ -511,7 +511,13 @@ size
 (A 2 4)
 ;; returns 4
 ;; y = 0? no, x = 0? no, y = 1? no, 10 - 1 = 9, x = 1 y = 9.
-;; 
+;; A (0, A 0, 9)
+(A 3 3)
+;; returns 65536
+;; All in all, it evaluates to see if the three conds are true. if they are not, it goes to the else. subtracts x by 1 and then our y will be function of A with the new x and y-1.
+
+;; We will let the compiler do the ligit math
 
 ;; capital J in command mode joins lines
 
+;;
