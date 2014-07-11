@@ -498,8 +498,20 @@ size
 ;; *** Exercise 1.10 ***
 
 (define (A x y)
-  (cond ((= y 0) 0
-   )))
+  (cond ((= y 0) 0)
+        ((= x 0) (* 2 y))
+        ((= y 1) 2)
+        (else (A (= x 1)
+                 (A x (- y 1))))))
 
+;;x is 1 y is 10...
+;; x  y
+(A 1 10)
+;; returns 10
+(A 2 4)
+;; returns 4
+;; y = 0? no, x = 0? no, y = 1? no, 10 - 1 = 9, x = 1 y = 9.
+;; 
 
+;; capital J in command mode joins lines
 
