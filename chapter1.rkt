@@ -565,4 +565,15 @@ size
         ((= kinds-of-coins 5) 50)))
 
 (count-change 100)
+;; results 292
 (count-change 1)
+
+;;--------------------------------------------
+;; Exercise 1.11
+
+;;f(n) = n if n < 3 and f(n) = f(n-1)+2f(n-2)+3f(n-3) if n> or = 3
+
+(define (f n)
+  (cond ((< n 3) n)
+        ((> n 3)
+         (+ (f (- n 1)) ()))))
